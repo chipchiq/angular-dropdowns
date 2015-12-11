@@ -18,7 +18,7 @@
   ],
   "description": "AngularJS Dropdown Directives",
   "main": [
-    "dist/angular-dropdowns.min.js",
+    "dist/angular-dropdowns.js",
     "dist/angular-dropdowns.min.css"
   ],
   "keywords": [
