@@ -69,12 +69,18 @@
 					dropdownSelect: '=',
 					dropdownModel: '=',
 					dropdownItemLabel: '@',
-					dropdownOnchange: '&'
+					dropdownOnchange: '&',
+          dropdownPlaceholder: '='
 				},
 
 				controller: ['$scope', '$element', function ($scope, $element) {
 					$scope.labelField = $scope.dropdownItemLabel || 'text';
-					$scope.selectMap = {}
+					$scope.selectMap = {
+            undefined: {
+              text: $scope.dropdownPlaceholder
+            }
+
+          }
 					angular.forEach($scope.dropdownSelect, function(item) {
 						$scope.selectMap[item.value] = item;
 					});
