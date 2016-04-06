@@ -74,6 +74,7 @@
 				},
 
 				controller: ['$scope', '$element', function ($scope, $element) {
+					var prepareSelectMap;
 					$scope.labelField = $scope.dropdownItemLabel || 'text';
 					$scope.selectMap = {
 						undefined: {
@@ -81,7 +82,7 @@
 						}
 
 					};
-					(function prepareSelectMap () {
+					(prepareSelectMap = function () {
 						angular.forEach($scope.dropdownSelect, function(item) {
 							$scope.selectMap[item.value] = item;
 						});
