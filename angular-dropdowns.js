@@ -70,21 +70,27 @@
 					dropdownModel: '=',
 					dropdownItemLabel: '@',
 					dropdownOnchange: '&',
-          dropdownPlaceholder: '='
+		  			dropdownPlaceholder: '='
 				},
 
 				controller: ['$scope', '$element', function ($scope, $element) {
+					var prepareSelectMap;
 					$scope.labelField = $scope.dropdownItemLabel || 'text';
 					$scope.selectMap = {
-            undefined: {
-              text: $scope.dropdownPlaceholder
-            }
+						undefined: {
+						  text: $scope.dropdownPlaceholder
+						}
 
-          }
-					angular.forEach($scope.dropdownSelect, function(item) {
-						$scope.selectMap[item.value] = item;
-					});
+					};
+					(prepareSelectMap = function () {
+						angular.forEach($scope.dropdownSelect, function(item) {
+							$scope.selectMap[item.value] = item;
+						});
+					})();
 					console.log($scope.selectMap);
+					$scope.$watch('dropdownSelect', function(){
+						prepareSelectMap();
+					}, true);
 
 					DropdownService.register($element);
 
