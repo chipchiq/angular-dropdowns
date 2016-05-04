@@ -87,7 +87,6 @@
 							$scope.selectMap[item.value] = item;
 						});
 					})();
-					console.log($scope.selectMap);
 					$scope.$watch('dropdownSelect', function(){
 						prepareSelectMap();
 					}, true);
@@ -96,7 +95,6 @@
 
 					this.select = function (selected) {
 						$scope.dropdownModel = selected.value;
-						console.log($scope.dropdownModel);
 						//if (selected !== $scope.dropdownModel) {
 						//  angular.copy(selected, $scope.dropdownModel);
 						//}
