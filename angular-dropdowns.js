@@ -106,6 +106,7 @@
 					$element.bind('click', function (event) {
 						event.stopPropagation();
 						DropdownService.toggleActive($element);
+            $scope.$emit('openDropdown');
 					});
 
 					$scope.$on('$destroy', function () {
